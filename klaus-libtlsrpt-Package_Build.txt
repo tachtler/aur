@@ -1,0 +1,13 @@
+curl -Lo /tmp/libtlsrpt-0.5.0rc1.tar.gz https://github.com/sys4/libtlsrpt/releases/download/v0.5.0rc1/libtlsrpt-0.5.0rc1.tar.gz
+cd /tmp
+sha256sum libtlsrpt-0.5.0rc1.tar.gz 
+cd /home/klaus/aur/libtlsrpt
+vim PKGBUILD
+makepkg
+-----
+makepkg --printsrcinfo > .SRCINFO
+git add PKGBUILD .SRCINFO
+git commit -m "update to 0.5.0rc1"
+git push
+-----
+rm -f /tmp/libtlsrpt*

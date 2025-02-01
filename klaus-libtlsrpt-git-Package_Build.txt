@@ -1,0 +1,11 @@
+cd /home/klaus/aur/libtlsrpt-git
+vim PKGBUILD.latest.git
+makepkg
+-----
+makepkg --printsrcinfo > .SRCINFO
+git add PKGBUILD .SRCINFO
+git commit -m "rebuild latest version from git"
+git push
+-----
+cd /home/klaus/aur/libtlsrpt-git
+rm -rf libtlsrpt* pkg/ src/

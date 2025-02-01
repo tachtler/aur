@@ -1,0 +1,13 @@
+curl -Lo /tmp/mod_perl-2.0.13.tar.gz https://archive.apache.org/dist/perl/mod_perl-2.0.13.tar.gz
+cd /tmp
+sha256sum mod_perl-2.0.13.tar.gz 
+cd /home/klaus/aur/mod_perl
+vim PKGBUILD
+makepkg
+-----
+makepkg --printsrcinfo > .SRCINFO
+git add PKGBUILD .SRCINFO
+git commit -m "update to 2.0.13"
+git push
+-----
+rm -f /tmp/mod_perl-*

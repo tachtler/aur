@@ -1,0 +1,13 @@
+curl -Lo /tmp/graylog-6.1.5.tar.gz https://packages.graylog2.org/releases/graylog/graylog-6.1.5.tgz
+cd /tmp
+sha256sum graylog-6.1.5.tar.gz
+cd /home/klaus/aur/graylog
+vim PKGBUILD
+makepkg
+-----
+makepkg --printsrcinfo > .SRCINFO
+git add PKGBUILD .SRCINFO
+git commit -m "update to 6.1.5"
+git push
+-----
+rm -f /tmp/graylog-*
